@@ -51,9 +51,9 @@ angular.module('angular-input-stars', [])
 
             ngModelCtrl.$render = function () {
                 if (isFloat(ngModelCtrl.$viewValue)) {
-                    scope.lastValue = (Math.round(ngModelCtrl.$viewValue * 2) / 2)
+                    scope.lastValue = (Math.round(parseFloat(ngModelCtrl.$viewValue * 2)) / 2)
                 } else {
-                    scope.lastValue = ngModelCtrl.$viewValue || 0;
+                    scope.lastValue = parseFloat(ngModelCtrl.$viewValue) || 0;
                 }
             };
 
